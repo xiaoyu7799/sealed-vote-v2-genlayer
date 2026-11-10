@@ -19,6 +19,7 @@ Every transaction below reached FINALIZED. Success cases show majority agreement
 - `mascot-vote` (tie): TALLIED — outcome `TIED`, counts `[1, 1]`, winner `Mochi`, result hash `2f85e859f3efd2c4…`
 - `empty-vote` (novotes): TALLIED — outcome `NO_VOTES`, counts `[0, 0]`, winner `None`, result hash `fbcc2cc54d91b0d1…`
 - `cancel-vote` (cancel): CANCELLED
+- `late-reveal-vote` (late-reveal): TALLIED — outcome `NO_VOTES`, counts `[0, 0]`, winner `None`, result hash `404fd070c141d5e1…`
 
 ### Transactions
 
@@ -55,6 +56,9 @@ Every transaction below reached FINALIZED. Success cases show majority agreement
 | empty-vote:finalize | success | `0xd0840e551113bde9811cdb1c102dc0a41b6d5ea1015d4c9f86143c5b5c293802` | FINALIZED | 4/5 agree |
 | lunch-vote:finalize | success | `0xb68991c75e4dbd636604693a4f789b4544769739d74a491f4449480a96d1fc91` | FINALIZED | 3/5 agree |
 | mascot-vote:finalize | success | `0x17b6ed652ea912fe2bbe8b2c3c22594e1a36f9d4e14b64a5662adaa906dd6597` | FINALIZED | 3/5 agree |
+| late-reveal-vote:create | success | `0xffe2da38edfc56e067ccee62133f5d7fb0e3e2537bcc49bf9f09c311cc32977a` | FINALIZED | 3/5 agree |
+| late-reveal-vote:commit:lateVoter | success | `0x335435a435e50037cea31128254289ab651313662199030c6af948047555a652` | FINALIZED | 3/5 agree |
+| late-reveal-vote:finalize | success | `0x40e8a3df4e7daeddc4327d5d7235d6ea5a14b1cc0a98c60ad8046a01345062f8` | FINALIZED | 3/5 agree |
 
 ### Adversarial cases (all must fail)
 
@@ -82,3 +86,32 @@ Every transaction below reached FINALIZED. Success cases show majority agreement
 ## Known limitations
 
 See [KNOWN_LIMITATIONS.md](KNOWN_LIMITATIONS.md).
+
+## Supplementary case: late-reveal-vote (orphaned, salt lost)
+
+- `late-reveal-vote` was created (commit deadline 2026-11-10T01:00:00Z,
+  reveal deadline 2026-11-10T02:00:00Z) with one commitment, as the
+  expired-reveal case: the voter was to reveal with the correct salt
+  after the reveal deadline and the call was expected to fail on chain
+  with `REVEAL_WINDOW_CLOSED`, then finalize to `NO_VOTES`.
+- The first run of `scripts/late_reveal.mjs` completed the create and
+  the commit (both FINALIZED) but was killed by a runtime restart
+  while waiting for the reveal hour. The salt and the temporary
+  account keys lived only in that process's memory, so they were lost
+  with it; no copy exists on disk, in any document, or in the repo.
+  Without the salt the commitment can never be revealed (any reveal
+  fails the hash check with `COMMITMENT_MISMATCH` first).
+- The orphaned election was therefore closed out on 2026-11-10 ~03:07
+  UTC by an unrelated throwaway account (`lateFinalizer`) calling
+  `finalize_tally`: FINALIZED, 3/5 agree, terminal readback TALLIED,
+  outcome `NO_VOTES`, counts `[0, 0]`, zero revealed ballots. The
+  election never held funds. The expired-reveal attempt itself was
+  not completed for this election id; it is re-run under a fresh
+  election id with fresh temporary accounts.
+- The `created` snapshot recorded for this election in
+  `evidence/live.json` is reconstructed from the pre-finalize chain
+  readback with commitments emptied (at creation the election had no
+  commitments); deadlines, options and owner are read from the chain.
+  `scripts/verify_proof.py` cannot recompute this commitment's hash
+  offline (salt lost) and says so explicitly; the tally and result
+  hash are still checked.

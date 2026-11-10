@@ -1,0 +1,21 @@
+{
+  "election_id": "late-reveal-vote",
+  "contract": "0xF68b58AEA5AE127b34917D49e9F830F51FEFB9C0",
+  "stage": "finalized-orphan",
+  "txs": {
+    "create": "0xffe2da38edfc56e067ccee62133f5d7fb0e3e2537bcc49bf9f09c311cc32977a",
+    "commit": "0x335435a435e50037cea31128254289ab651313662199030c6af948047555a652",
+    "finalize": "0x40e8a3df4e7daeddc4327d5d7235d6ea5a14b1cc0a98c60ad8046a01345062f8"
+  },
+  "updated_at": "2026-11-10T03:07:58.180Z",
+  "commit_deadline": "2026-11-10T01:00:00Z",
+  "reveal_deadline": "2026-11-10T02:00:00Z",
+  "reveal_at": "2026-11-10T03:05:00Z",
+  "now_utc": "2026-11-10T03:01:14.162Z",
+  "final_state": "TALLIED",
+  "outcome": "NO_VOTES",
+  "counts": [
+    0,
+    0
+  ]
+}

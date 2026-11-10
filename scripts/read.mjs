@@ -74,7 +74,7 @@ if (await client.getContractCode(address) !== source) throw Error('SOURCE_MISMAT
 console.log('SOURCE VERIFIED', address);
 
 for (const rec of journal.elections) {
-  const raw = await readContract('get_election', [journal.accounts.creator, rec.id]);
+  const raw = await readContract('get_election', [rec.creator || journal.accounts.creator, rec.id]);
   const el = JSON.parse(raw);
   if (rec.final) assert.deepEqual(el, rec.final, rec.id + ' readback mismatch');
   if (el.state === 'TALLIED') {

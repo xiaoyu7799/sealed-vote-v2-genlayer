@@ -23,7 +23,10 @@
     "voterG": "0x45820910A21b7A329aE7E9C16a42409b81B86859",
     "voterH": "0xcC91D090eCA1caA145840AD59a5BC3E081004FE1",
     "stranger": "0xa39faaE0717D4fC55cC2B0d4dC7CeD8A0173fd3C",
-    "finalizer": "0xDAE6092dBA0743b09de8EBcf9a12d88F7bAdCF88"
+    "finalizer": "0xDAE6092dBA0743b09de8EBcf9a12d88F7bAdCF88",
+    "lateCreator": "0xfB7498Ee9D9bb4b882B1e8f707b9bD0d31C749be",
+    "lateVoter": "0x77a774002052c76955F86a0ed937617D0bea9AD5",
+    "lateFinalizer": "0x5b73EbA345Ba774bD610841706757a2E783b1694"
   },
   "transactions": [
     {
@@ -521,6 +524,54 @@
         "SUCCESS"
       ],
       "error": null
+    },
+    {
+      "label": "late-reveal-vote:create",
+      "sender": "0xfB7498Ee9D9bb4b882B1e8f707b9bD0d31C749be",
+      "expected": "success",
+      "hash": "0xffe2da38edfc56e067ccee62133f5d7fb0e3e2537bcc49bf9f09c311cc32977a",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "late-reveal-vote:commit:lateVoter",
+      "sender": "0x77a774002052c76955F86a0ed937617D0bea9AD5",
+      "expected": "success",
+      "hash": "0x335435a435e50037cea31128254289ab651313662199030c6af948047555a652",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "late-reveal-vote:finalize",
+      "sender": "0x5b73EbA345Ba774bD610841706757a2E783b1694",
+      "expected": "success",
+      "hash": "0x40e8a3df4e7daeddc4327d5d7235d6ea5a14b1cc0a98c60ad8046a01345062f8",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
     }
   ],
   "elections": [
@@ -628,6 +679,36 @@
       ],
       "final_state": "CANCELLED",
       "result": null
+    },
+    {
+      "id": "late-reveal-vote",
+      "case": "late-reveal",
+      "commit_deadline": "2026-11-10T01:00:00Z",
+      "reveal_deadline": "2026-11-10T02:00:00Z",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "final_state": "TALLIED",
+      "result": {
+        "counts": [
+          0,
+          0
+        ],
+        "election_id": "late-reveal-vote",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "outcome": "NO_VOTES",
+        "owner": "0xfb7498ee9d9bb4b882b1e8f707b9bd0d31c749be",
+        "protocol": "sealed-vote-1",
+        "result_hash": "404fd070c141d5e1cfec04bc41c51334c206c1ebd9ee630872df9e9c495600a1",
+        "tied_indices": [],
+        "total_revealed": 0,
+        "winner": null,
+        "winner_index": null
+      }
     }
   ]
 }
