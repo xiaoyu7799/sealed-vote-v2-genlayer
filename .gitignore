@@ -2,3 +2,4 @@ node_modules/
 __pycache__/
 *.pyc
 checkpoint-late-reveal-2.json
+LATE_REVEAL_CHECKPOINT.json
