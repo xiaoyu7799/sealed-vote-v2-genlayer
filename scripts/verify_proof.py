@@ -45,13 +45,14 @@ for rec in journal["elections"]:
     assert final, rec["id"] + " has no final readback"
     election_id = rec["id"]
     # every stored commitment hash must equal SHA-256(salt|option),
-    # except for elections whose voter salt was lost (late-reveal-vote:
-    # the previous run was killed by a runtime restart before the
-    # reveal, so the hash cannot be recomputed offline). The tally
-    # and result hash below are still checked for those.
+    # except for elections whose voter salt is not in the repo records
+    # (late-reveal-vote: lost when the first run was killed by a
+    # runtime restart; late-reveal-vote-2: held only in the run
+    # checkpoint, deleted on completion). The tally and result hash
+    # below are still checked for those.
     if election_id not in VOTES:
-        print(election_id, "salt lost — commitment hash not "
-              "recheckable offline; tally + result hash checked below")
+        print(election_id, "salt not in repo records — commitment hash "
+              "not recheckable offline; tally + result hash checked below")
     else:
         for addr, entry in final["commitments"].items():
             label = by_address.get(addr.lower())

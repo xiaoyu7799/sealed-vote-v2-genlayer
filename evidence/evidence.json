@@ -26,7 +26,9 @@
     "finalizer": "0xDAE6092dBA0743b09de8EBcf9a12d88F7bAdCF88",
     "lateCreator": "0xfB7498Ee9D9bb4b882B1e8f707b9bD0d31C749be",
     "lateVoter": "0x77a774002052c76955F86a0ed937617D0bea9AD5",
-    "lateFinalizer": "0x5b73EbA345Ba774bD610841706757a2E783b1694"
+    "lateFinalizer": "0x5b73EbA345Ba774bD610841706757a2E783b1694",
+    "lateCreator2": "0xb9FB3280F9047C2b830d7b2767370db690b056bA",
+    "lateVoter2": "0xe21c260A639b871394aE39F09a0E4fbC10b64570"
   },
   "transactions": [
     {
@@ -572,6 +574,70 @@
         "SUCCESS"
       ],
       "error": null
+    },
+    {
+      "label": "late-reveal-vote-2:create",
+      "sender": "0xb9FB3280F9047C2b830d7b2767370db690b056bA",
+      "expected": "success",
+      "hash": "0xab3e8dbaf2c7fc3d1b45f5b5e869bd23176f69d64bfcb4f00bf84f2999cf4696",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "late-reveal-vote-2:commit:lateVoter2",
+      "sender": "0xe21c260A639b871394aE39F09a0E4fbC10b64570",
+      "expected": "success",
+      "hash": "0x88c770db0ddee1181a48c51f61dbf02cb127940cfdb3a89e90fc3bf7da36fc11",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "late-reveal-vote-2:reveal-late",
+      "sender": "0xe21c260A639b871394aE39F09a0E4fbC10b64570",
+      "expected": "fail",
+      "hash": "0x65215ada95d943933f4dbcf03de55a04ba7e7b25074643777b49547102d4f3ef",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "ERROR",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "late-reveal-vote-2:finalize",
+      "sender": "0xb9FB3280F9047C2b830d7b2767370db690b056bA",
+      "expected": "success",
+      "hash": "0xd769e40d319448cd5ee785e4d685af7e6e2eaa27b08ee3f23451604431beda86",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
     }
   ],
   "elections": [
@@ -704,6 +770,36 @@
         "owner": "0xfb7498ee9d9bb4b882b1e8f707b9bd0d31c749be",
         "protocol": "sealed-vote-1",
         "result_hash": "404fd070c141d5e1cfec04bc41c51334c206c1ebd9ee630872df9e9c495600a1",
+        "tied_indices": [],
+        "total_revealed": 0,
+        "winner": null,
+        "winner_index": null
+      }
+    },
+    {
+      "id": "late-reveal-vote-2",
+      "case": "late-reveal",
+      "commit_deadline": "2026-11-10T05:00:00Z",
+      "reveal_deadline": "2026-11-10T06:00:00Z",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "final_state": "TALLIED",
+      "result": {
+        "counts": [
+          0,
+          0
+        ],
+        "election_id": "late-reveal-vote-2",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "outcome": "NO_VOTES",
+        "owner": "0xb9fb3280f9047c2b830d7b2767370db690b056ba",
+        "protocol": "sealed-vote-1",
+        "result_hash": "b83b9c5b7ac29d45e49b24ddfc6c564f637f1384c80b803d9af234a3572f9128",
         "tied_indices": [],
         "total_revealed": 0,
         "winner": null,
