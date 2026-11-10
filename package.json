@@ -1,0 +1,1 @@
+{"dependencies":{"genlayer-js":"1.1.8","viem":"2.57.17"},"name":"sealed-vote-v2-genlayer","private":true,"scripts":{"live":"node scripts/live.mjs","read":"node scripts/read.mjs","test":"python -m unittest discover -s tests -v && python scripts/verify_proof.py"},"type":"module"}

@@ -1,0 +1,633 @@
+{
+  "network": {
+    "chain_id": 61999,
+    "rpc": "https://studio.genlayer.com/api"
+  },
+  "contract_address": "0xF68b58AEA5AE127b34917D49e9F830F51FEFB9C0",
+  "source_sha256": "7adcbfcfefccde423e8abff2504b37842f79f6e3a55650c3700cab279f208764",
+  "protocol": "sealed-vote-1",
+  "started_at": "2026-11-09T22:51:59.749Z",
+  "completed_at": "2026-11-10T01:04:03.312Z",
+  "hours": {
+    "commit_deadline": "2026-11-09T23:00:00Z",
+    "reveal_deadline": "2026-11-10T00:00:00Z",
+    "finalize_from": "2026-11-10T01:00:00Z"
+  },
+  "accounts": {
+    "creator": "0xB95eACf6F2E508a36Ef6eA6eCd8d41CfcEb7Ae13",
+    "voterA": "0x04C28AF8bE2134333b8f6C2D23B60985409fE527",
+    "voterB": "0xe90aDDB1640eabc6F3A707Edf92a477510b2f0D0",
+    "voterC": "0x27fF69136CcE1cb23Cb7b57A180f378b2cf83ff6",
+    "voterD": "0xE54bD095fb35e22Af346518aD8C0Ee35C6e54f06",
+    "voterE": "0x5C1BE6A7bC2E193c45F5ED393ebF293Ca42d2567",
+    "voterG": "0x45820910A21b7A329aE7E9C16a42409b81B86859",
+    "voterH": "0xcC91D090eCA1caA145840AD59a5BC3E081004FE1",
+    "stranger": "0xa39faaE0717D4fC55cC2B0d4dC7CeD8A0173fd3C",
+    "finalizer": "0xDAE6092dBA0743b09de8EBcf9a12d88F7bAdCF88"
+  },
+  "transactions": [
+    {
+      "label": "deploy",
+      "sender": "0xB95eACf6F2E508a36Ef6eA6eCd8d41CfcEb7Ae13",
+      "expected": "success",
+      "hash": "0xe113561b4c96e6efba797ef67c1964e71a804917ac7a1caab85178a313df7207",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:create",
+      "sender": "0xB95eACf6F2E508a36Ef6eA6eCd8d41CfcEb7Ae13",
+      "expected": "success",
+      "hash": "0xddbc87c0680315340f589998690fb0afb749ca366a1b0a0df3255e38b99ca369",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "mascot-vote:create",
+      "sender": "0xB95eACf6F2E508a36Ef6eA6eCd8d41CfcEb7Ae13",
+      "expected": "success",
+      "hash": "0xfe24b270a035e9de9b423f3cedbe227c3acf27067e68f441dabe1aafe6739521",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 4,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "empty-vote:create",
+      "sender": "0xB95eACf6F2E508a36Ef6eA6eCd8d41CfcEb7Ae13",
+      "expected": "success",
+      "hash": "0x5f4447fca5aaaf7873b98cf15bf8bf2f54e4ace73c42e0bf219d2abada6d9d20",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "cancel-vote:create",
+      "sender": "0xB95eACf6F2E508a36Ef6eA6eCd8d41CfcEb7Ae13",
+      "expected": "success",
+      "hash": "0x8200820cecab2cd86a761ee5de6f1b0cf56363f61ac87bb5983ed02cfe70ca97",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:create-conflict",
+      "sender": "0xB95eACf6F2E508a36Ef6eA6eCd8d41CfcEb7Ae13",
+      "expected": "fail",
+      "hash": "0xb00fee615374f558f81410edb26cb1ba98d743c6e64279dd97c33f8303a2f1d3",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "ERROR",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:commit:A",
+      "sender": "0x04C28AF8bE2134333b8f6C2D23B60985409fE527",
+      "expected": "success",
+      "hash": "0x729551b06a141146f2328eec48b6f00892bf2427622468c153a9ab34caca860a",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:commit:B",
+      "sender": "0xe90aDDB1640eabc6F3A707Edf92a477510b2f0D0",
+      "expected": "success",
+      "hash": "0x89e430bb6079d5854555ad6a8489190574cc7461f7df91d73c2755180d05d103",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:commit:C",
+      "sender": "0x27fF69136CcE1cb23Cb7b57A180f378b2cf83ff6",
+      "expected": "success",
+      "hash": "0xa3b884eefe8ad0b8ea14106a7e4d9ecacf125cb28ee8c777dda72d8832b625b6",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:commit:G",
+      "sender": "0x45820910A21b7A329aE7E9C16a42409b81B86859",
+      "expected": "success",
+      "hash": "0xcd5630c63db89d3cad046a47814c217db6a868f9c9784828de674757cdd5231c",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "mascot-vote:commit:D",
+      "sender": "0xE54bD095fb35e22Af346518aD8C0Ee35C6e54f06",
+      "expected": "success",
+      "hash": "0x5cdd2b75f36cadc253b9e316c7c8e458ff0a6307643bd67f3d981047298fa5f6",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "mascot-vote:commit:E",
+      "sender": "0x5C1BE6A7bC2E193c45F5ED393ebF293Ca42d2567",
+      "expected": "success",
+      "hash": "0x15af6200c4d7eeef28a7845a69e89293b04e9443377bf193080c7fb1316e7c49",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "cancel-vote:commit:H",
+      "sender": "0xcC91D090eCA1caA145840AD59a5BC3E081004FE1",
+      "expected": "success",
+      "hash": "0x27532603f803a9ba97cc62e8092747d2179d5ed02488b5c6cc218da05bf275ff",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:commit-duplicate",
+      "sender": "0x04C28AF8bE2134333b8f6C2D23B60985409fE527",
+      "expected": "fail",
+      "hash": "0x36ea9af87079d0caf2bc35a2681a140e4f7e58a341b7538d1502e8d62224a295",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "ERROR",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "empty-vote:commit-late",
+      "sender": "0x04C28AF8bE2134333b8f6C2D23B60985409fE527",
+      "expected": "fail",
+      "hash": "0xb58338e629e9afac30c4782e01d21295ffb91d63fb67257438cf6d39d1a967cc",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "ERROR",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:finalize-early",
+      "sender": "0xa39faaE0717D4fC55cC2B0d4dC7CeD8A0173fd3C",
+      "expected": "fail",
+      "hash": "0xe527b99cd7fba82c8081fc7571820db4e87028798d462055ecdc3741a14489d9",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "ERROR",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:cancel-stranger",
+      "sender": "0xa39faaE0717D4fC55cC2B0d4dC7CeD8A0173fd3C",
+      "expected": "fail",
+      "hash": "0x8d42537da6a94c0619bdadca90a393be1223087c14330f8691f8d2664973f08e",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 4,
+        "total": 5
+      },
+      "leader_execution": [
+        "ERROR",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "cancel-vote:cancel",
+      "sender": "0xB95eACf6F2E508a36Ef6eA6eCd8d41CfcEb7Ae13",
+      "expected": "success",
+      "hash": "0xf3a8e117be1eea687dfd957b7a1fab05a92c8630c66522a426734ff3dc49b622",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "cancel-vote:commit-after-cancel",
+      "sender": "0xcC91D090eCA1caA145840AD59a5BC3E081004FE1",
+      "expected": "fail",
+      "hash": "0xd02fb3a6b6bb7f531c02d04f39658feebc3839cc3ec410c082ac21e2bc0888bd",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 4,
+        "total": 5
+      },
+      "leader_execution": [
+        "ERROR",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:reveal:A",
+      "sender": "0x04C28AF8bE2134333b8f6C2D23B60985409fE527",
+      "expected": "success",
+      "hash": "0xbfdc2efe0657406c00b67d9d80ea5a59d708da6c5e4b60e7d8c378e4033be80e",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:reveal:B",
+      "sender": "0xe90aDDB1640eabc6F3A707Edf92a477510b2f0D0",
+      "expected": "success",
+      "hash": "0x01586e9b51b25a49ae7ac6b8c2345f29af52a9f3370c7137ae6e015555554f6c",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:reveal:C",
+      "sender": "0x27fF69136CcE1cb23Cb7b57A180f378b2cf83ff6",
+      "expected": "success",
+      "hash": "0xed6ac76cf2bbc55b573a5a844699e3c7b28bd8f58cc52b8e21236fbcb13d03d0",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "mascot-vote:reveal:D",
+      "sender": "0xE54bD095fb35e22Af346518aD8C0Ee35C6e54f06",
+      "expected": "success",
+      "hash": "0x1a2ee3d9827bbf96137762f95dd6a5749e69481aededcd5f09fb262e3a4ec6b5",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "mascot-vote:reveal:E",
+      "sender": "0x5C1BE6A7bC2E193c45F5ED393ebF293Ca42d2567",
+      "expected": "success",
+      "hash": "0x6c9ab2aa5af71d8f939cebc4b47cf9f91309ef6daa5c7047e8ffcd31674cf44a",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:reveal-wrong-salt",
+      "sender": "0x45820910A21b7A329aE7E9C16a42409b81B86859",
+      "expected": "fail",
+      "hash": "0xb6eeef60ca6a0dd117a1c5a72fdfb04ac5ddb6b259483d61fca31e6e292fd2d5",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "ERROR",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:reveal-wrong-option",
+      "sender": "0x45820910A21b7A329aE7E9C16a42409b81B86859",
+      "expected": "fail",
+      "hash": "0x01bfde5588456758ea572169e17123339a623a892263b8ed50d00a4937fe763b",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "ERROR",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:reveal-duplicate",
+      "sender": "0x04C28AF8bE2134333b8f6C2D23B60985409fE527",
+      "expected": "fail",
+      "hash": "0x4b205d06b38fee7fb006c4b3c7538772bc02a1eb64a7ffbdd1a5dbe93c21f313",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "ERROR",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:reveal-stranger",
+      "sender": "0xa39faaE0717D4fC55cC2B0d4dC7CeD8A0173fd3C",
+      "expected": "fail",
+      "hash": "0x51c3fa6a3b73cbf3f5bb0c76d9e463c5f6d4f8d81afb304cacc9bcbb69b5ac69",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "ERROR",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "empty-vote:finalize",
+      "sender": "0xa39faaE0717D4fC55cC2B0d4dC7CeD8A0173fd3C",
+      "expected": "success",
+      "hash": "0xd0840e551113bde9811cdb1c102dc0a41b6d5ea1015d4c9f86143c5b5c293802",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 4,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    },
+    {
+      "label": "lunch-vote:finalize",
+      "sender": "0xDAE6092dBA0743b09de8EBcf9a12d88F7bAdCF88",
+      "expected": "success",
+      "hash": "0xb68991c75e4dbd636604693a4f789b4544769739d74a491f4449480a96d1fc91",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "ERROR"
+      ],
+      "error": null
+    },
+    {
+      "label": "mascot-vote:finalize",
+      "sender": "0xDAE6092dBA0743b09de8EBcf9a12d88F7bAdCF88",
+      "expected": "success",
+      "hash": "0x17b6ed652ea912fe2bbe8b2c3c22594e1a36f9d4e14b64a5662adaa906dd6597",
+      "status": "FINALIZED",
+      "consensus": {
+        "agree": 3,
+        "total": 5
+      },
+      "leader_execution": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "error": null
+    }
+  ],
+  "elections": [
+    {
+      "id": "lunch-vote",
+      "case": "winner",
+      "commit_deadline": "2026-11-09T23:00:00Z",
+      "reveal_deadline": "2026-11-10T00:00:00Z",
+      "options": [
+        "Noodles",
+        "Rice"
+      ],
+      "final_state": "TALLIED",
+      "result": {
+        "counts": [
+          2,
+          1
+        ],
+        "election_id": "lunch-vote",
+        "options": [
+          "Noodles",
+          "Rice"
+        ],
+        "outcome": "DECIDED",
+        "owner": "0xb95eacf6f2e508a36ef6ea6ecd8d41cfceb7ae13",
+        "protocol": "sealed-vote-1",
+        "result_hash": "50b61beac52ba8bed705ad81d7eeaf8def77359e770e9c9c71154bacfd7f550c",
+        "tied_indices": [],
+        "total_revealed": 3,
+        "winner": "Noodles",
+        "winner_index": 0
+      }
+    },
+    {
+      "id": "mascot-vote",
+      "case": "tie",
+      "commit_deadline": "2026-11-09T23:00:00Z",
+      "reveal_deadline": "2026-11-10T00:00:00Z",
+      "options": [
+        "Mochi",
+        "Pixel"
+      ],
+      "final_state": "TALLIED",
+      "result": {
+        "counts": [
+          1,
+          1
+        ],
+        "election_id": "mascot-vote",
+        "options": [
+          "Mochi",
+          "Pixel"
+        ],
+        "outcome": "TIED",
+        "owner": "0xb95eacf6f2e508a36ef6ea6ecd8d41cfceb7ae13",
+        "protocol": "sealed-vote-1",
+        "result_hash": "2f85e859f3efd2c48c6d1bf56db8c954da25df331f09970c1f468dbf31da5aeb",
+        "tied_indices": [
+          0,
+          1
+        ],
+        "total_revealed": 2,
+        "winner": "Mochi",
+        "winner_index": 0
+      }
+    },
+    {
+      "id": "empty-vote",
+      "case": "novotes",
+      "commit_deadline": "2026-11-09T22:00:00Z",
+      "reveal_deadline": "2026-11-09T23:00:00Z",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "final_state": "TALLIED",
+      "result": {
+        "counts": [
+          0,
+          0
+        ],
+        "election_id": "empty-vote",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "outcome": "NO_VOTES",
+        "owner": "0xb95eacf6f2e508a36ef6ea6ecd8d41cfceb7ae13",
+        "protocol": "sealed-vote-1",
+        "result_hash": "fbcc2cc54d91b0d1872fb49e547e0c5c545b531d848c8c76b880edd5429bd094",
+        "tied_indices": [],
+        "total_revealed": 0,
+        "winner": null,
+        "winner_index": null
+      }
+    },
+    {
+      "id": "cancel-vote",
+      "case": "cancel",
+      "commit_deadline": "2026-11-09T23:00:00Z",
+      "reveal_deadline": "2026-11-10T00:00:00Z",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "final_state": "CANCELLED",
+      "result": null
+    }
+  ]
+}
