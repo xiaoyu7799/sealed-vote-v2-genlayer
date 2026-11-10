@@ -21,3 +21,8 @@
   has no effect on the result.
 - All live evidence uses synthetic test elections with published
   test salts. The recorded ballots are test data, not real votes.
+- An earlier run of the same flow was killed by two runtime restarts
+  before its tallies; its contract `0x4F90aB796C1C56B2923B55cDB51A1698B1A385BB`
+  is orphaned with 29 FINALIZED transactions and elections never
+  tallied. It holds no funds (no payable functions) and is not used
+  as evidence; its journal is kept only in the coordinator's workdir.

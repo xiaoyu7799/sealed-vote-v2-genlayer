@@ -72,6 +72,11 @@ own address and fails. A stranger calling `reveal_vote` has no
 commitment under their address and fails — even if they know the
 salt, because the commitment is keyed by the committer's address.
 
+Creating an election with an id the caller already used fails with
+`ID_ALREADY_USED` — there is no idempotent rebuild, even for an
+identical definition. A duplicate create is rejected outright, so a
+conflicting redefinition can never silently replace an election.
+
 ## Exits
 
 Every non-terminal state has an exit. An OPEN election is cancelled
